@@ -10,7 +10,7 @@ export class FormService {
 
   constructor(private fb: FormBuilder, private formValidator: FormValidatorService) {
     this.form = this.fb.group({
-      likedItem : null,
+      likedItem : [null, Validators.required],
       customerDetails: this.fb.group({
         firstName: [null, Validators.required],
         lastName: [null, Validators.required],
@@ -20,9 +20,17 @@ export class FormService {
           houseNum: [null, Validators.required],
           city: [null, Validators.required],
           floor: [null, Validators.required],
-        })
+        }),
+        // likes: this.fb.array([this.createArray()])
       })
     });
+   }
+
+   createArray(): FormGroup {
+     return this.fb.group({
+       itemTitle: [null, Validators.required],
+       itemLiked: [null, Validators.required]
+     });
    }
 
    get isValid(): boolean {

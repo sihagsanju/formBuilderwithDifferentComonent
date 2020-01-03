@@ -3,16 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
-import { ChildaddressComponent } from './childaddress/childaddress.component';
+import { AddressComponent } from './address/address.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { AceEditorModule } from 'ng2-ace-editor';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
-    ChildaddressComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +21,8 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AceEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
